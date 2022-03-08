@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Container, Heading } from '@chakra-ui/react';
 import InputSearch from 'components/inputsearch/InputSearch';
-import ContainerGenre from 'components/movieslist/container/ContainerGenre';
+import CheckMovies from 'components/middlewares/CheckMovies';
 import { LIMIT_SEARCH } from 'constants/enviroment';
 /**
  * Component main to invoke all app.
@@ -32,7 +32,7 @@ export default function App() {
           </Heading>
         </Container>
       ) : (
-        <ContainerGenre search={search} />
+        <CheckMovies search={search} />
       )}
     </>
   );
