@@ -1,5 +1,5 @@
 import useGetMovies from 'hooks/useGetMovies';
-import { Spinner, Heading } from '@chakra-ui/react';
+import { Container, Spinner, Heading } from '@chakra-ui/react';
 import ContainerGenre from 'components/movieslist/container/ContainerGenre';
 /**
  * Declare type/interface for this component.
@@ -21,13 +21,15 @@ export default function CheckMovies({ search }: CheckMoviesProps) {
   // If search is loading.
   if (isLoading) {
     return (
-      <Spinner
-        thickness='4px'
-        speed='0.65s'
-        emptyColor='gray.200'
-        color='blue.500'
-        size='xl'
-      />
+      <Container centerContent mt={24} maxW='container.xl'>
+        <Spinner
+          thickness='4px'
+          speed='0.65s'
+          emptyColor='gray.200'
+          color='blue.500'
+          size='xl'
+        />
+      </Container>
     );
   }
   // If we have a error.
