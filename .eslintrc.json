@@ -4,11 +4,7 @@
     "es2021": true,
     "jest": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "airbnb"
-  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -24,6 +20,9 @@
     "import/extensions": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": "off",
-    "jsx-quotes": "off"
+    "react/jsx-one-expression-per-line": "off",
+    "react/require-default-props": "off",
+    "jsx-quotes": "off",
+    "object-curly-newline": "off"
   }
 }
