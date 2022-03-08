@@ -35,9 +35,19 @@ export default function CheckMovies({ search }: CheckMoviesProps) {
   // If we have a error.
   if (isError) {
     return (
-      <Heading as='h3'>
-        We are having a problem. Please contact support. We are sorry.
-      </Heading>
+      <Container centerContent mt={24} maxW='container.xl'>
+        <Heading as='h3'>
+          We are having a problem. Please contact support. We are sorry.
+        </Heading>
+      </Container>
+    );
+  }
+  // If we not have results.
+  if (!movies.results.length) {
+    return (
+      <Container centerContent mt={24} maxW='container.xl'>
+        <Heading as='h3'>No results with the search have been found.</Heading>
+      </Container>
     );
   }
   // If all is good give info to next component.
