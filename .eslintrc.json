@@ -20,6 +20,10 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "react/react-in-jsx-scope": "off"
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": "off",
+    "jsx-quotes": "off"
   }
 }
