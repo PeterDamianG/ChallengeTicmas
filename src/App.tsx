@@ -1,17 +1,39 @@
-import { Container } from '@chakra-ui/react';
+import { useState } from 'react';
+import { Container, Heading } from '@chakra-ui/react';
 import InputSearch from 'components/inputsearch/InputSearch';
 import ContainerGenre from 'components/movieslist/container/ContainerGenre';
+import { LIMIT_SEARCH } from 'constants/enviroment';
 /**
- *
- * @returns
+ * Component main to invoke all app.
+ * @example
+ * import App from './App';
+ * ReactDOM.render(<App />, document.getElementById('root'));
  */
 export default function App() {
+  // Set a global state only used one useState.
+  const [search, setSearch] = useState('');
+  const handleSearchChange = (e: any) => setSearch(e.target.value);
+  const MINIMUM_LENGTH = search.length < LIMIT_SEARCH;
+  // Return component.
   return (
     <>
       <Container centerContent p={8} maxW='container.md'>
-        <InputSearch />
+        <InputSearch
+          valueSearch={search}
+          isError={MINIMUM_LENGTH}
+          fnSearch={handleSearchChange}
+        />
       </Container>
-      <ContainerGenre />
+      {MINIMUM_LENGTH ? (
+        <Container centerContent mt={24} maxW='container.xl'>
+          <Heading as='h3'>
+            You need complete the text field with a minimum of {LIMIT_SEARCH}{' '}
+            characters.
+          </Heading>
+        </Container>
+      ) : (
+        <ContainerGenre search={search} />
+      )}
     </>
   );
 }
