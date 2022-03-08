@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   FormControl,
   FormLabel,
@@ -10,14 +9,36 @@ import {
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 /**
- *
- * @returns
+ * Declare type/interface for this component.
  */
-export default function InputSearch() {
-  const [input, setInput] = useState('');
-  const handleInputChange = (e: any) => setInput(e.target.value);
-  const isError = input.length < 4;
-
+type InputSearchProps = {
+  valueSearch: string;
+  isError: boolean;
+  // eslint-disable-next-line no-unused-vars
+  fnSearch: (e: any) => void;
+};
+/**
+ * Component to make an input type search for movies.
+ * @param {string} props.valueSearch - Set a string pass to component. Use for search.
+ * @param {boolean} props.isError - Boolean to check field input.
+ * @param {Function} props.fnSearch - Callback to set value field in you want.
+ * @example
+ * import InputSearch from 'components/inputsearch/InputSearch';
+ * export default function App() {
+ *  ...
+ *    <InputSearch
+ *      valueSearch={search}
+ *      isError={search.length < 4}
+ *      fnSearch={handleInputChange}
+ *    />
+ *  ...
+ * }
+ */
+export default function InputSearch({
+  valueSearch = '',
+  isError,
+  fnSearch,
+}: InputSearchProps) {
   return (
     <FormControl isRequired isInvalid={isError}>
       <FormLabel htmlFor='search'>Search Movie</FormLabel>
@@ -26,8 +47,8 @@ export default function InputSearch() {
           size='lg'
           placeholder='Avengers: Endgame'
           id='search'
-          value={input}
-          onChange={handleInputChange}
+          value={valueSearch}
+          onChange={fnSearch}
         />
         {/* eslint-disable-next-line react/no-children-prop */}
         <InputRightElement children={<SearchIcon />} />
