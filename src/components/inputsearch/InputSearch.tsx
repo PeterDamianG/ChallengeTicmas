@@ -8,6 +8,7 @@ import {
   InputRightElement,
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
+import { LIMIT_SEARCH } from 'constants/enviroment';
 /**
  * Declare type/interface for this component.
  */
@@ -57,7 +58,7 @@ export default function InputSearch({
         <FormHelperText>Find the movie you want.</FormHelperText>
       ) : (
         <FormErrorMessage>
-          A minimum of 4 characters is required.
+          A minimum of { LIMIT_SEARCH } characters is required.
         </FormErrorMessage>
       )}
     </FormControl>
