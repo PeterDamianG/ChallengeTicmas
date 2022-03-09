@@ -6,7 +6,7 @@ import { API_IMG } from 'constants/enviroment';
 type ItemCardProps = {
   imagenUrlBack: string;
   originalTitle: string;
-  average: string;
+  average: number;
   imageAlt?: string;
 };
 /**

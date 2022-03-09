@@ -12,7 +12,7 @@ type ItemCardProps = {
   imageAlt?: string;
   imagenUrlBack: string;
   originalTitle: string;
-  average: string;
+  average: number;
 };
 /**
  * Logic card component to setting front/back card.
