@@ -19,7 +19,11 @@ export default function Header({
   return (
     <Flex bg='blue.500'>
       <Box p='2'>
-        <Heading color='white' size='md'>
+        <Heading
+          color='white'
+          size='md'
+          title='Challenge for Ticmas(Vi-Datec), this app is a posible solution.'
+        >
           {title}
         </Heading>
       </Box>
@@ -30,7 +34,11 @@ export default function Header({
           target='_blank'
           rel='noreferrer'
         >
-          <Button rightIcon={<ArrowForwardIcon />} colorScheme='teal'>
+          <Button
+            rightIcon={<ArrowForwardIcon />}
+            colorScheme='teal'
+            title='Go to Github to see code solution.'
+          >
             Go to source.
           </Button>
         </a>
