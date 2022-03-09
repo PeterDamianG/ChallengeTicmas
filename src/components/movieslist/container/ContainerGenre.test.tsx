@@ -24,17 +24,16 @@ const mockDataMovies: movie[] = [
   },
 ];
 
+beforeEach(() => render(<ContainerGenre data={mockDataMovies} />));
 afterAll(cleanup);
 
 describe('/src/components/movielist/container/ContainerGenre.tsx - <ContainerGenre> - Component Render.', () => {
   test('Does render accordion title component.', () => {
-    render(<ContainerGenre data={mockDataMovies} />);
     screen.getByText('Adventure');
     screen.getByText('Action');
     screen.getByText('Science Fiction');
   });
   test('Does render all title movies.', () => {
-    render(<ContainerGenre data={mockDataMovies} />);
     const allMovies = screen.getAllByText(/The Avengers/i);
     expect(allMovies.length).toEqual(3);
   });
