@@ -13,7 +13,7 @@ import { LIMIT_SEARCH } from 'constants/enviroment';
  * Declare type/interface for this component.
  */
 type InputSearchProps = {
-  valueSearch: string;
+  valueSearch?: string;
   isError: boolean;
   // eslint-disable-next-line no-unused-vars
   fnSearch: (e: any) => void;
