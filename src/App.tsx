@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Header from 'components/layout/header/Header';
 import { Container, Heading } from '@chakra-ui/react';
 import InputSearch from 'components/inputsearch/InputSearch';
 import CheckMovies from 'components/middlewares/CheckMovies';
@@ -17,6 +18,7 @@ export default function App() {
   // Return component.
   return (
     <>
+      <Header />
       <Container centerContent p={8} maxW='container.md'>
         <InputSearch
           valueSearch={search}
