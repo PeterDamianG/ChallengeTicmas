@@ -42,7 +42,9 @@ export default function InputSearch({
 }: InputSearchProps) {
   return (
     <FormControl isRequired isInvalid={isError}>
-      <FormLabel htmlFor='search'>Search Movie</FormLabel>
+      <FormLabel fontSize={24} htmlFor='search'>
+        Search Movie
+      </FormLabel>
       <InputGroup>
         <Input
           size='lg'
@@ -50,6 +52,7 @@ export default function InputSearch({
           id='search'
           value={valueSearch}
           onChange={fnSearch}
+          title='Write whatever movie you want find.'
         />
         {/* eslint-disable-next-line react/no-children-prop */}
         <InputRightElement children={<SearchIcon />} />
@@ -58,7 +61,7 @@ export default function InputSearch({
         <FormHelperText>Find the movie you want.</FormHelperText>
       ) : (
         <FormErrorMessage>
-          A minimum of { LIMIT_SEARCH } characters is required.
+          A minimum of {LIMIT_SEARCH} characters is required.
         </FormErrorMessage>
       )}
     </FormControl>
