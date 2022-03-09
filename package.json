@@ -1,7 +1,17 @@
 {
-  "name": "my-app",
+  "name": "@peterdg/app-frontend-challenge-ticmas",
   "version": "0.1.0",
-  "private": true,
+  "description": "A FrontEnd APP for the challenge from Ticmas.",
+  "keywords": [
+    "challengejs",
+    "APP",
+    "frontend",
+    "react",
+    "chakra",
+    "Ticmas"
+  ],
+  "author": "Peter Damian Gómez <PeterDamianG@Gmail.com> (https://github.com/PeterDamianG)",
+  "license": "MIT",
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.8.6",
