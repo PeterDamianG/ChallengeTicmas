@@ -64,6 +64,9 @@ export default function ContainerGenre({ data }: ContainerGenreProps) {
                     imageUrlPoster={m.poster_path}
                     title={m.title}
                     year={m.release_date}
+                    imagenUrlBack={m.backdrop_path}
+                    originalTitle={m.original_title}
+                    average={m.vote_average}
                   />
                 </WrapItem>
               ))}
