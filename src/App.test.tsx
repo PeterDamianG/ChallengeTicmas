@@ -3,7 +3,7 @@ import App from './App';
 
 afterAll(cleanup);
 
-describe('/src/App.js - <App> - Main Component Renders.', () => {
+describe('/src/App.tsx - <App> - Main Component Renders.', () => {
   test('Does renders main app.', () => {
     render(<App />);
     // <Header> Component.
