@@ -3,8 +3,8 @@ import App from './App';
 
 afterAll(cleanup);
 
-describe('/src/core/App.js - <App> - Main Component Renders.', () => {
-  test('Does renders main app.', async () => {
+describe('/src/App.js - <App> - Main Component Renders.', () => {
+  test('Does renders main app.', () => {
     render(<App />);
     // <Header> Component.
     screen.getByText('Vi-Datec Frontend Dev Challenge');
