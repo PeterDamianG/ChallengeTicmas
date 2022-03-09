@@ -44,7 +44,12 @@ export default function ItemCard({
   const handleStateChange = () => setState(!state);
   // Return back card.
   return (
-    <Center py={12} onClick={handleStateChange} cursor='pointer'>
+    <Center
+      py={12}
+      onClick={handleStateChange}
+      cursor='pointer'
+      title='Click me to turn on card.'
+    >
       {state ? (
         <ItemCardFront
           imageUrlPoster={imageUrlPoster}
