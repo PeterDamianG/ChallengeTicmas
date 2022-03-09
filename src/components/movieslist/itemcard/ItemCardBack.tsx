@@ -78,7 +78,7 @@ export default function ItemCardBack({
       </Box>
       <Stack pt={10} align='center'>
         <Text
-          color={Number(average) > 7 ? 'green.300' : 'red'}
+          color={Number(average) >= 7 ? 'green.300' : 'red'}
           fontSize='sm'
           textTransform='uppercase'
         >
