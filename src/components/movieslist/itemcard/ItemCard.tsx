@@ -1,5 +1,7 @@
-import { Box, Container, Image } from '@chakra-ui/react';
-import { API_IMG } from 'constants/enviroment';
+import { useState } from 'react';
+import { Center } from '@chakra-ui/react';
+import ItemCardFront from './ItemCardFront';
+import ItemCardBack from './ItemCardBack';
 /**
  * Declare type/interface for this component.
  */
@@ -8,38 +10,56 @@ type ItemCardProps = {
   title: string;
   year: string;
   imageAlt?: string;
+  imagenUrlBack: string;
+  originalTitle: string;
+  average: string;
 };
-// Sample card from Airbnb
+/**
+ * Logic card component to setting front/back card.
+ * @example
+ * import ItemCard from 'components/movieslist/itemcard/ItemCard';
+ * ...
+ *   <WrapItem key={m.id}>
+ *     <ItemCard
+ *       imageUrlPoster={m.poster_path}
+ *       title={m.title}
+ *       year={m.release_date}
+ *       imagenUrlBack={m.backdrop_path}
+ *       originalTitle={m.original_title}
+ *       average={m.vote_average}
+ *     />
+ * ...
+ */
 export default function ItemCard({
   imageUrlPoster,
   title,
   year,
   imageAlt = 'The image is not working. We are sorry.',
+  imagenUrlBack,
+  originalTitle,
+  average,
 }: ItemCardProps) {
+  // State true = card front, false = card back.
+  const [state, setState] = useState(true);
+  const handleStateChange = () => setState(!state);
+  // Return back card.
   return (
-    <Box maxW='md' borderWidth='6px' borderRadius='lg'>
-      <Image
-        src={`${API_IMG}${imageUrlPoster}`}
-        alt={imageAlt}
-        fit='cover'
-        align='center'
-        w='100%'
-        fallbackSrc='https://i.ytimg.com/vi/q41AIk3gPKQ/hqdefault.jpg'
-      />
-      <Container centerContent p={4} isTruncated>
-        <Box fontWeight='semibold' as='h4' lineHeight='tight'>
-          {title}
-        </Box>
-        <Box
-          color='gray.500'
-          fontWeight='semibold'
-          letterSpacing='wide'
-          fontSize='xs'
-          textTransform='uppercase'
-        >
-          &bull; {year} &bull;
-        </Box>
-      </Container>
-    </Box>
+    <Center py={12} onClick={handleStateChange} cursor='pointer'>
+      {state ? (
+        <ItemCardFront
+          imageUrlPoster={imageUrlPoster}
+          title={title}
+          year={year}
+          imageAlt={imageAlt}
+        />
+      ) : (
+        <ItemCardBack
+          imagenUrlBack={imagenUrlBack}
+          originalTitle={originalTitle}
+          average={average}
+          imageAlt={imageAlt}
+        />
+      )}
+    </Center>
   );
 }
