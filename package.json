@@ -42,7 +42,9 @@
     "prettier": "prettier --write ./src/**/*.{ts,tsx,css,md,json} && prettier --check ./src/**/*.{ts,tsx,css,md,json}",
     "test": "react-scripts test --watchAll=false",
     "test-coverage": "npm test -- --coverage --verbose --runInBand",
-    "see-coverage": "cd coverage/lcov-report && index.html"
+    "see-coverage": "cd coverage/lcov-report && index.html",
+    "e2e": "npx playwright test",
+    "see-e2e": "npx playwright show-report"
   },
   "eslintConfig": {
     "extends": [
