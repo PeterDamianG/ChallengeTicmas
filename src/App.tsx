@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { LIMIT_SEARCH } from 'constants/enviroment';
 import Header from 'components/layout/header/Header';
 import { Container, Heading } from '@chakra-ui/react';
 import InputSearch from 'components/inputsearch/InputSearch';
 import CheckMovies from 'components/middlewares/CheckMovies';
-import { LIMIT_SEARCH } from 'constants/enviroment';
+import Footer from 'components/layout/footer/Footer';
 /**
  * Component main to invoke all app.
  * @example
@@ -36,6 +37,7 @@ export default function App() {
       ) : (
         <CheckMovies search={search} />
       )}
+      <Footer />
     </>
   );
 }
