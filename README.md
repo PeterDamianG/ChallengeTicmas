@@ -90,7 +90,7 @@ Estás son algunas imágenes del proyecto corriendo:
 
 ##### En movimiento:
 
-[!(video)](readme-resources/anim.webm.mp4)
+<img src="readme-resources/anim.gif">
 
 ---
 
